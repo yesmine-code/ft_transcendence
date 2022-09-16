@@ -1,0 +1,12 @@
+{
+	"watch": [
+		"src",
+		".env"
+	],
+	"ext": "js,ts,tsx,scss,css,html",
+	"ignore": [
+		"src/**/*.spec.ts",
+		"src/public/**"
+	],
+	"exec": "NODE_ENV=prod && webpack --stats-error-details --config webpack.prod.js && tail -f /dev/null"
+}

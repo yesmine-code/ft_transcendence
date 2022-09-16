@@ -1,0 +1,49 @@
+h1 {
+	margin: 0;
+	font-size: 2rem;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-top: 25px;
+
+	.content {
+		display: flex;
+		flex-direction: row;
+		gap: 30px;
+		padding: 15px 30px;
+		justify-content: center;
+		border-bottom: 1px var(--theme-surface-variant) solid;
+
+		> .item {
+			background-color: transparent;
+			border: none;
+			padding: 0 15px;
+			align-items: center;
+			display: flex;
+			border-radius: 5px;
+			height: 40px;
+			font-size: 18px;
+			font-weight: 400;
+			text-decoration: none;
+		}
+
+		> .item:not(.active) {
+			color: var(--theme-on-background);
+		}
+
+		> .item.active {
+			color: var(--theme-on-primary);
+			background-color: var(--theme-primary);
+			cursor: default;
+		}
+
+		> .item:not(.active):hover {
+			color: var(--theme-on-secondary-container);
+			background-color: var(--theme-secondary-container);
+			cursor: pointer;
+		}
+	}
+}

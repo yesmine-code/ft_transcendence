@@ -1,0 +1,71 @@
+version: '3.9'
+
+services:
+  postgresql:
+    build:
+      context: ./source/postgresql/
+      target: base
+    restart: always
+    ports:
+      - 4001:4001
+    networks:
+      - database_network
+    volumes:
+      - postgresql_volume:/var/lib/postgresql/data
+    env_file:
+      - ./source/postgresql/env
+    command: -p 4001
+    tty: true
+    container_name: postgresql
+
+  adminer:
+    image: adminer
+    restart: always
+    environment:
+      ADMINER_DEFAULT_DB_DRIVER: pgsql
+      ADMINER_DEFAULT_DB_HOST: postgresql:4001
+      ADMINER_DEFAULT_DB_NAME: transcendence
+    ports:
+      - 4002:8080
+    networks:
+      - database_network
+
+  backend:
+    build:
+      context: ./source/backend/
+      target: base
+    restart: always
+    depends_on:
+      - postgresql
+      - frontend
+    networks:
+      - database_network
+    ports:
+      - 4000:4000
+    env_file:
+      - ./source/postgresql/env
+      - ./source/backend/env
+    volumes:
+      - ./source/backend/src/:/app/
+      - /app/node_modules
+      - static_volume:/app/dist/static/:ro
+    container_name: backend
+
+  frontend:
+    build:
+      context: ./source/frontend/
+      target: base
+    restart: always
+    volumes:
+      - ./source/frontend/src/:/app/
+      - /app/node_modules
+      - static_volume:/app/static/
+    container_name: frontend
+
+networks:
+  database_network:
+    driver: "bridge"
+
+volumes:
+  postgresql_volume:
+  static_volume:

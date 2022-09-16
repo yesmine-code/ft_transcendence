@@ -1,0 +1,23 @@
+.container {
+	margin: 0;
+	border: 0;
+	background-color: transparent;
+	display: flex;
+	gap: 4px;
+	align-items: center;
+	padding: 0 10px;
+	height: 40px;
+	justify-content: center;
+	cursor: pointer;
+
+	> div {
+		width: 4px;
+		height: 4px;
+		background-color: var(--theme-on-background);
+		border-radius: 50%;
+	}
+}
+
+.container.vertical {
+	flex-direction: column;
+}

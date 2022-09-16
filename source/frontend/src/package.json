@@ -1,0 +1,57 @@
+{
+  "name": "src",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/node": "^18.7.1",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "css-loader": "^6.7.1",
+    "highcharts": "^10.2.0",
+    "highcharts-react-official": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.19",
+    "npm-check-updates": "^16.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "serve": "^14.0.1",
+    "socket.io-client": "^4.5.1",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.1",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
+    "typescript": "^4.7.4",
+    "uuid": "^8.3.2",
+    "webpack-cli": "^4.10.0"
+  },
+  "scripts": {
+	"start:dev": "nodemon",
+	"start": "NODE_ENV=prod && webpack --stats-error-details --config webpack.prod.js && tail -f /dev/null"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "@types/mocha": "^9.1.1",
+    "@types/uuid": "^8.3.4",
+    "sass": "^1.54.4",
+    "sass-loader": "^13.0.2",
+    "webpack": "^5.74.0"
+  }
+}

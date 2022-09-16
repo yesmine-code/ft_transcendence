@@ -1,0 +1,22 @@
+.container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+
+		.title {
+			font-size: 24px;
+			font-weight: 600;
+		}
+
+		.subtitle {
+			font-size: 20px;
+		}
+	}
+}

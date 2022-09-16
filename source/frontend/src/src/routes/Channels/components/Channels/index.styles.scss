@@ -1,0 +1,162 @@
+.header {
+	display: flex;
+	padding: 10px 0;
+	flex-direction: column;
+	justify-content: space-between;
+	border-bottom: 1px var(--theme-surface-variant) solid;
+
+	.content {
+		display: flex;
+		flex-direction: row;
+		gap: 30px;
+		justify-content: center;
+		width: fit-content;
+
+		.create {
+			text-decoration: none;
+			color: var(--theme-primary);
+			padding: 0;
+			height: 45px;
+			font-size: 16px;
+			display: flex;
+			flex: 1 1 auto;
+			align-items: center;
+			border-radius: 5px;
+			cursor: pointer;
+			background-color: transparent;
+			border: none;
+			box-sizing: content-box;
+			font-weight: 400;
+		}
+	}
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	gap: 20px;
+
+	.invitations,
+	.conversations {
+		display: flex;
+		flex-direction: column;
+
+		.invitations_header,
+		.conversations_header {
+			height: 40px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			> span {
+				font-size: 15px;
+				font-weight: 600;
+			}
+		}
+
+		.invitations_content,
+		.conversations_content {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.conversations {
+		flex: 1 0 auto;
+
+		.conversations_content {
+			flex: 1 0 auto;
+			position: relative;
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 65px;
+		padding: 0 5px;
+		border-radius: 5px;
+
+		.item_name {
+			min-width: 250px;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		span {
+			display: -webkit-box;
+			white-space: normal;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 1;
+			overflow: hidden;
+		}
+
+		.item_primary_text {
+			font-size: 16px;
+			font-weight: 300;
+			color: var(--theme-on-surface-variant);
+		}
+	}
+
+	.invitations {
+		.item {
+			cursor: default;
+
+			.action {
+				display: flex;
+				gap: 20px;
+
+				button {
+					background-color: transparent;
+					border: 1px var(--theme-primary) solid;
+					border-radius: 5px;
+					padding: 0 15px;
+					color: var(--theme-primary);
+					cursor: pointer;
+					height: 40px;
+				}
+			}
+		}
+	}
+
+	.conversations {
+		.item {
+			cursor: pointer;
+
+			.details {
+				display: flex;
+				align-items: center;
+				width: fit-content;
+				gap: 30px;
+			}
+		}
+
+		.item:hover {
+			background-color: #00000012;
+		}
+
+		.empty {
+			flex: 1 0 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+	
+			span {
+				font-size: 18px;
+				font-weight: 400;
+				color: var(--theme-secondary);
+			}
+		}
+	}
+}

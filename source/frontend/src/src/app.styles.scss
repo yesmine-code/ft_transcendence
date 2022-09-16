@@ -1,0 +1,25 @@
+.container {
+	background-color: var(--theme-background);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: var(--theme-on-background);
+
+	.content {
+		width: 100%;
+		display: flex;
+		overflow: auto;
+	}
+
+	.content:not(.disconnected) {
+		margin-top: 75px;
+		height: calc(100vh - 75px);
+	}
+
+	.content.disconnected {
+		margin-top: 105px;
+		height: calc(100vh - 105px);
+	}
+}

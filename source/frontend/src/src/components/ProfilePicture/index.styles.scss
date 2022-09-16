@@ -1,0 +1,10 @@
+.container {
+	display: flex;
+	overflow: hidden;
+	border-radius: 50%;
+	aspect-ratio: 1;
+
+	img {
+		width: 100%;
+	}
+}

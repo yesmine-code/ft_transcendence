@@ -1,0 +1,39 @@
+{
+	"compilerOptions": {
+		"jsx": "react",
+		"target": "ESNext",
+		"strict": true,
+		"lib": [
+			"DOM",
+			"ES2020",
+			"ESNext"
+		],
+		"typeRoots": [
+			"@types",
+			"./node_modules/@types"
+		],
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"module": "commonjs",
+		"pretty": true,
+		"sourceMap": true,
+		"outDir": "./dist",
+		"allowJs": true,
+		"noEmit": false,
+		"esModuleInterop": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	},
+	"include": [
+		"src",
+		"./src/**/*"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

@@ -1,0 +1,120 @@
+.container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 400px;
+	margin: 0 auto;
+
+	.header {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 50px;
+
+		.title {
+			font-size: 30px;
+			font-weight: 400;
+		}
+	}
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 24px;
+
+		.code {
+			display: flex;
+			gap: 15px;
+
+			> div {
+				flex: 1;
+			}
+
+			> .send_code {
+				display: flex;
+				align-items: center;
+				height: 56px;
+				text-decoration: none;
+				color: var(--theme-primary);
+				background-color: var(--theme-on-primary);
+				font-weight: 600;
+				border-radius: 5px;
+				font-size: 15px;
+				padding: 0 15px;
+				justify-content: center;
+				border: 1px var(--theme-primary) solid;
+				cursor: pointer;
+			}
+		}
+
+		.submit {
+			display: flex;
+			align-items: center;
+			height: 56px;
+			width: 100%;
+			text-decoration: none;
+			color: var(--theme-on-primary);
+			background-color: var(--theme-primary);
+			border: 0;
+			font-weight: 600;
+			border-radius: 5px;
+			font-size: 16px;
+			padding: 0;
+			justify-content: center;
+			cursor: pointer;
+		}
+	}
+
+	.separator {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		gap: 15px;
+		margin: 25px 0;
+
+		> div {
+			width: 100%;
+			height: 1px;
+			background-color: var(--theme-outline);
+		}
+
+		> span {
+			font-size: 16px;
+			color: var(--theme-on-background-container);
+			margin-bottom: 4px;
+		}
+	}
+
+	.others {
+		width: 100%;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+
+		.button {
+			display: flex;
+			align-items: center;
+			height: 56px;
+			width: 100%;
+			text-decoration: none;
+			color: var(--theme-on-primary);
+			background-color: var(--theme-primary);
+			font-weight: 600;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			justify-content: center;
+		}
+
+		.option {
+			text-decoration: none;
+			color: var(--theme-primary);
+			cursor: pointer;
+		}
+	}
+}

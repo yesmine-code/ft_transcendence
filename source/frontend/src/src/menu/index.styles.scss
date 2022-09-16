@@ -1,0 +1,33 @@
+.container.primary {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.background {
+		width: inherit;
+		height: inherit;
+		position: absolute;
+		left: inherit;
+		top: inherit;
+		background-color: var(--theme-transparency);
+	}
+
+	.content {
+		z-index: 1000;
+		position: absolute;
+		background-color: var(--theme-background);
+		padding: 24px;
+		border-radius: 5px;
+		overflow: auto;
+	}
+}
+
+.container:not(.primary) {
+	display: none;
+}

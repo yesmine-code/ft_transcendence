@@ -1,0 +1,23 @@
+.page {
+	height: 100%;
+	padding: 0 25px;
+	display: flex;
+	box-sizing: border-box;
+	align-items: center;
+	flex-flow: column;
+	width: 100%;
+}
+
+.header,
+.body {
+	width: 100%;
+	max-width: 1400px;
+}
+
+.header {
+	flex: 0 1 auto;
+}
+
+.body {
+	flex: 1 1 auto;
+}

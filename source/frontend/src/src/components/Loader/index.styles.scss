@@ -1,0 +1,53 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+
+	.title {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: row;
+		gap: 20px;
+		padding-top: 50px;
+
+		> div {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: var(--theme-on-background);;
+			animation: up-down 1s ease-in-out infinite;
+		}
+
+		> div:nth-child(2) {
+			animation-delay: 0.2s;
+		}
+
+		> div:nth-child(3) {
+			animation-delay: 0.4s;
+		}
+
+		> div:nth-child(4) {
+			animation-delay: 0.6s;
+		}
+
+		> div:nth-child(5) {
+			animation-delay: 0.8s;
+		}
+
+		@keyframes up-down {
+			0% {
+				transform: translateY(0px);
+			}
+			50% {
+				transform: translateY(-50px);
+			}
+			75% {
+				transform: translateY(0px);
+			}
+		}
+	}
+}

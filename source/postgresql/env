@@ -1,0 +1,5 @@
+POSTGRES_HOST=postgresql
+POSTGRES_USER=postgresql_user
+POSTGRES_PASSWORD=postgresql_password
+POSTGRES_DB=transcendence
+POSTGRES_PORT=4001

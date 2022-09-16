@@ -1,0 +1,210 @@
+h1 {
+	margin: 0;
+	font-size: 2rem;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-top: 30px;
+
+	.content {
+		display: flex;
+		justify-content: space-between;
+
+		.presentation {
+			display: flex;
+			gap: 20px;
+
+			.profile_picture {
+				width: 100px;
+				cursor: pointer;
+			}
+
+			.name {
+				display: flex;
+				flex-direction: column;
+				gap: 7px;
+				margin-bottom: 10px;
+				justify-content: center;
+
+				.display_name {
+					font-size: 20px;
+					font-weight: 600;
+				}
+
+				.username {
+					font-size: 15px;
+				}
+			}
+		}
+
+		.actions {
+			display: flex;
+			align-items: center;
+			gap: 15px;
+
+			.status {
+				display: flex;
+				align-items: center;
+				gap: 5px;
+				justify-content: center;
+				margin: 0 10px;
+
+				> div {
+					border-radius: 50%;
+					width: 12px;
+					height: 12px;
+				}
+			}
+
+			.status::after {
+				font-size: 15px;
+				margin-bottom: 3px;
+				color: var(--theme-secondary);
+			}
+
+			.status[data-status='OFFLINE']::after {
+				content: 'offline';
+			}
+
+			.status[data-status='ONLINE']::after {
+				content: 'online';
+			}
+
+			.status[data-status='IN_GAME']::after {
+				content: 'in game';
+			}
+
+			.status[data-status='OFFLINE'] {
+				> div {
+					background-color: var(--theme-secondary);
+				}
+			}
+
+			.status[data-status='ONLINE'],
+			.status[data-status='IN_GAME'] {
+				> div {
+					background-color: var(--theme-primary);
+				}
+			}
+
+			.friend_request {
+				width: fit-content;
+				padding: 0 20px;
+				height: 40px;
+				cursor: pointer;
+				border-radius: 50px;
+				font-size: 15px;
+			}
+	
+			.friend_request:not(.friend):not(.pending):not(.blocked) {
+				background-color: transparent;
+				border: 1px var(--theme-primary) solid;
+				color: var(--theme-primary);
+			}
+
+			.friend_request.pending {
+				background-color: transparent;
+				border: 1px var(--theme-secondary) solid;
+				color: var(--theme-secondary);
+			}
+	
+			.friend_request.friend {
+				background-color: var(--theme-primary);
+				border: none;
+				color: var(--theme-on-primary);
+			}
+
+			.friend_request.blocked {
+				background-color: transparent;
+				border: 1px var(--theme-error) solid;
+				color: var(--theme-error);
+			}
+
+			.menu {
+				margin: 0;
+				border: 0;
+				background-color: transparent;
+				display: flex;
+				flex-direction: column;
+				gap: 4px;
+				align-items: center;
+				padding: 0 10px;
+				height: 40px;
+				justify-content: center;
+				cursor: pointer;
+
+				> div {
+					width: 4px;
+					height: 4px;
+					background-color: var(--theme-on-background);
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+
+	.footer {
+		display: flex;
+		flex-direction: row;
+		gap: 30px;
+		padding: 15px 30px;
+		justify-content: center;
+		border-bottom: 1px var(--theme-surface-variant) solid;
+
+		> .item {
+			background-color: transparent;
+			border: none;
+			padding: 0 15px;
+			align-items: center;
+			display: flex;
+			border-radius: 5px;
+			height: 40px;
+			font-size: 18px;
+			font-weight: 400;
+			text-decoration: none;
+		}
+
+		> .item:not(.active) {
+			color: var(--theme-on-background);
+		}
+
+		> .item.active {
+			color: var(--theme-on-primary);
+			background-color: var(--theme-primary);
+			cursor: default;
+		}
+
+		> .item:not(.active):hover {
+			color: var(--theme-on-secondary-container);
+			background-color: var(--theme-secondary-container);
+			cursor: pointer;
+		}
+	}
+}
+
+.error {
+	width: 100%;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
+	.error_content {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		width: fit-content;
+
+		.title {
+			font-size: 34px;
+		}
+
+		.message {
+			font-size: 20px;
+		}
+	}
+}
